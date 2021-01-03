@@ -29,6 +29,7 @@ use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\Access\Authorizable;
 use Illuminate\Notifications\Notifiable;
+use Laravel\Passport\HasApiTokens;
 use Seat\Eveapi\Models\Character\CharacterInfo;
 use Seat\Eveapi\Models\RefreshToken;
 use Seat\Services\Models\UserSetting;
@@ -43,7 +44,7 @@ use Seat\Web\Models\Squads\SquadMember;
  */
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract
 {
-    use Authenticatable, Authorizable, CanResetPassword, Notifiable;
+    use Authenticatable, Authorizable, CanResetPassword, Notifiable, HasApiTokens;
 
     /**
      * @var bool
